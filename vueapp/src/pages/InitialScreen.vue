@@ -1,19 +1,30 @@
 <template>
-  <v-container
-    id="input-usage"
-    fluid
-  >
+  <v-container id="input-usage" fluid>
     <v-row>
-      <v-col cols="12">
-        <v-text-field label="Label" prepend-icon="email-outline"></v-text-field>
+      <v-col cols="4" offset="4">
+        Welcome to Betting Tips application. Please enter email and<br />Get Started!
+        <v-text-field v-model="email" label="Email"></v-text-field>
+        <v-btn @click="userSubmted">
+          Submit
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script lang="js">
-    import { defineComponent } from 'vue';
+import { defineComponent } from 'vue';
 
-    export default defineComponent({
-    });
+export default defineComponent({
+        data() {
+            return {
+                email: '',
+            };
+        },
+  methods: {
+    userSubmted(){
+      alert(this.email);
+    }
+  }
+});
 </script>

@@ -1,18 +1,18 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <!-- <InitialScreen/> -->
-  <AdminPage/>
+  <InitialScreen/>
+  <!-- <AdminPage/> -->
 </template>
 
 <script>
 import InitialScreen from './pages/InitialScreen.vue'
-import AdminPage from './pages/AdminPage.vue'
+// import AdminPage from './pages/AdminPage.vue'
 
 export default {
   name: 'App',
   components: {
     InitialScreen, 
-    AdminPage
+    // AdminPage
   }
 }
 </script>
