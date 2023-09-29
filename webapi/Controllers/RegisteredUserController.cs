@@ -7,17 +7,17 @@ using webapi.Models;
 namespace webapi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class RegisteredUserController : ControllerBase
     {
-        private readonly DbContext _context;
+        private readonly AppDbContext _context;
 
-        public RegisteredUserController(DbContext context)
+        public RegisteredUserController(AppDbContext context)
         {
             this._context = context;
         }
 
-        [HttpPost(Name = "")]
+        [HttpPost(Name = "AddUser")]
         public OkObjectResult Add([FromBody]AddUserResource user)
         {
             var newUser = new RegisteredUser { Email = user.Email, Id = Guid.NewGuid() };

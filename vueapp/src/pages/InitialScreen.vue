@@ -22,7 +22,8 @@ export default defineComponent({
             };
         },
   methods: {
-    userSubmted(){
+    async userSubmted(){
+      await this.$http.post('api/RegisteredUser', {email: this.email})
       alert(this.email);
     }
   }

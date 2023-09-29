@@ -8,10 +8,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^1.5.1",
     "core-js": "^3.8.3",
     "jest": "^29.7.0",
     "jest-editor-support": "^31.1.1",
     "vue": "^3.2.26",
+    "vue-axios": "^3.5.2",
     "vuetify": "^3.3.17"
   },
   "devDependencies": {

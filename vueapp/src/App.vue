@@ -1,10 +1,12 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <InitialScreen/>
+  <!-- <HW /> -->
   <!-- <AdminPage/> -->
 </template>
 
 <script>
+// import HW from './components/HelloWorld.vue'
 import InitialScreen from './pages/InitialScreen.vue'
 // import AdminPage from './pages/AdminPage.vue'
 
@@ -12,6 +14,7 @@ export default {
   name: 'App',
   components: {
     InitialScreen, 
+    // HW,
     // AdminPage
   }
 }

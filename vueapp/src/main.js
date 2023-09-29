@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 // Vuetify
 import 'vuetify/styles'
@@ -12,4 +14,6 @@ const vuetify = createVuetify({
   directives,
 })
 
-createApp(App).use(vuetify).mount('#app')
+// Vue.use(VueAxios, axios)
+
+createApp(App).use(vuetify).use(VueAxios, axios).mount('#app')
