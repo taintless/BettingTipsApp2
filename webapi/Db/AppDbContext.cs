@@ -11,5 +11,6 @@ namespace webapi.Db
             
         }
         public DbSet<RegisteredUser> RegisteredUsers { get; set; }
+        public DbSet<Game> Games { get; set; }
     }
 }

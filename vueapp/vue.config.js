@@ -27,6 +27,9 @@ module.exports = {
             '^/api/RegisteredUser': {
                 target: 'https://localhost:7164/'
             },
+            '^/api/Games': {
+                target: 'https://localhost:7164/'
+            },
             // '^/api/registeredUser': {
             //     target: 'https://localhost:7164/'
             // }

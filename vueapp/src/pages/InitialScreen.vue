@@ -16,14 +16,14 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-        data() {
-            return {
-                email: '',
-            };
-        },
+  data() {
+    return {
+      email: '',
+    };
+  },
   methods: {
-    async userSubmted(){
-      await this.$http.post('api/RegisteredUser', {email: this.email})
+    async userSubmted() {
+      await this.$http.post('api/RegisteredUser', { email: this.email })
       alert(this.email);
     }
   }

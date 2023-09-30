@@ -20,11 +20,17 @@ namespace webapi.Controllers
         [HttpPost(Name = "AddUser")]
         public OkObjectResult Add([FromBody]AddUserResource user)
         {
-            var newUser = new RegisteredUser { Email = user.Email, Id = Guid.NewGuid() };
+            var newUser = new RegisteredUser { Email = user.Email, Id = Guid.NewGuid(), RegsisteredOn = DateTime.Now };
             _context.Add(newUser);
             _context.SaveChanges();
             return Ok(newUser);
+        }
 
+        [HttpGet(Name = "GetUser")]
+        public OkObjectResult Get()
+        {
+            var users = _context.RegisteredUsers.ToList();
+            return Ok(users);
         }
     }
 }

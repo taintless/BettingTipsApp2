@@ -1,19 +1,22 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <InitialScreen/>
+  <!-- <InitialScreen/> -->
   <!-- <HW /> -->
   <!-- <AdminPage/> -->
+  <div>
+    <router-view />
+  </div>
 </template>
 
 <script>
 // import HW from './components/HelloWorld.vue'
-import InitialScreen from './pages/InitialScreen.vue'
+// import InitialScreen from './pages/InitialScreen.vue'
 // import AdminPage from './pages/AdminPage.vue'
 
 export default {
   name: 'App',
   components: {
-    InitialScreen, 
+    // InitialScreen, 
     // HW,
     // AdminPage
   }
@@ -21,12 +24,12 @@ export default {
 </script>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
+} */
 </style>
