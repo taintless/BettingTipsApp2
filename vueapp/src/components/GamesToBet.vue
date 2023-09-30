@@ -26,6 +26,8 @@
                             <th class="text-left">
                                 Game time
                             </th>
+                            <th class="text-left">
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,6 +37,7 @@
                             <td>{{ game.league }}</td>
                             <td>{{ game.teamToBet }}</td>
                             <td>{{ game.gameTime }}</td>
+                            <td><v-checkbox v-model="selectedGames" @update:modelValue="$emit('selectedGamesUpdated', $event)" :value="game.id"></v-checkbox></td>
                         </tr>
                     </tbody>
                 </v-table>
@@ -51,9 +54,10 @@ export default defineComponent({
     data() {
         return {
             games: [],
+            selectedGames: [],
         };
     },
-    components: {AddGameForm},
+    components: { AddGameForm },
     mounted() {
         this.getGames()
     },

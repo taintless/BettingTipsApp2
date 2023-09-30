@@ -3,10 +3,10 @@
     <v-row>
       <v-col cols="12"> ADMIN PAGE </v-col>
       <!-- enter games -->
-      <GamesToBet />
+      <GamesToBet @selectedGamesUpdated="selectedGamesUpdated" />
       <!-- send emails panel -->
       <!-- statistics -->
-      <RegisteredUsers />
+      <RegisteredUsers @selectedUsersUpdated="selectedUsers = $event" />
     </v-row>
   </v-container>
 </template>
@@ -19,14 +19,17 @@ import GamesToBet from '../components/GamesToBet.vue'
 export default defineComponent({
   data() {
     return {
-      users: [],
+      selectedGames: [],
+      selectedUsers: []
     };
   },
-  components: {RegisteredUsers, GamesToBet},
+  components: { RegisteredUsers, GamesToBet },
   methods: {
-    async getUsers() {
-      var users = await this.$http.get('api/RegisteredUser');
-      this.users = users;
+    selectedUsersUpdated(users) {
+      this.selectedUsers = users;
+    },
+    selectedGamesUpdated(games) {
+      this.selectedGames = games;
     }
   }
 });
