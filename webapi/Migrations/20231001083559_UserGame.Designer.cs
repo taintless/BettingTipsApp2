@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webapi.Db;
 
@@ -11,9 +12,11 @@ using webapi.Db;
 namespace webapi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231001083559_UserGame")]
+    partial class UserGame
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,7 +51,7 @@ namespace webapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Games", (string)null);
+                    b.ToTable("Games");
                 });
 
             modelBuilder.Entity("webapi.Db.Entities.RegisteredUser", b =>
@@ -66,56 +69,7 @@ namespace webapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RegisteredUsers", (string)null);
-                });
-
-            modelBuilder.Entity("webapi.Db.Entities.UserGame", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("FailureMessage")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("GameId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("RegisteredUserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("Succeed")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("Timestamp")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GameId");
-
-                    b.HasIndex("RegisteredUserId");
-
-                    b.ToTable("UserGames", (string)null);
-                });
-
-            modelBuilder.Entity("webapi.Db.Entities.UserGame", b =>
-                {
-                    b.HasOne("webapi.Db.Entities.Game", "Game")
-                        .WithMany()
-                        .HasForeignKey("GameId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("webapi.Db.Entities.RegisteredUser", "RegisteredUser")
-                        .WithMany()
-                        .HasForeignKey("RegisteredUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Game");
-
-                    b.Navigation("RegisteredUser");
+                    b.ToTable("RegisteredUsers");
                 });
 #pragma warning restore 612, 618
         }
