@@ -1,1 +1,3 @@
 C:\Users\jokub\source\repos\BettingTipsApp2\vueapp\obj\Debug\vueapp.esproj.CoreCompileInputs.cache
+C:\git-source\BettingTipsApp2\vueapp\obj\Debug\vueapp.esproj.SuggestedBindingRedirects.cache
+C:\git-source\BettingTipsApp2\vueapp\obj\Debug\vueapp.esproj.CoreCompileInputs.cache

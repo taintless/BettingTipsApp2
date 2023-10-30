@@ -1,3 +1,5 @@
 
 webapi/obj/*
 .vs/
+vueapp/obj/
+webapi/bin/
