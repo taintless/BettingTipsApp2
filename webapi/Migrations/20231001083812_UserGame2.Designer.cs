@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webapi.Db;
 
@@ -11,9 +12,11 @@ using webapi.Db;
 namespace webapi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231001083812_UserGame2")]
+    partial class UserGame2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,7 +51,7 @@ namespace webapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Games", (string)null);
+                    b.ToTable("Games");
                 });
 
             modelBuilder.Entity("webapi.Db.Entities.RegisteredUser", b =>
@@ -66,7 +69,7 @@ namespace webapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RegisteredUsers", (string)null);
+                    b.ToTable("RegisteredUsers");
                 });
 
             modelBuilder.Entity("webapi.Db.Entities.UserGame", b =>
@@ -96,7 +99,7 @@ namespace webapi.Migrations
 
                     b.HasIndex("RegisteredUserId");
 
-                    b.ToTable("UserGames", (string)null);
+                    b.ToTable("UserGames");
                 });
 
             modelBuilder.Entity("webapi.Db.Entities.UserGame", b =>

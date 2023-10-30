@@ -29,7 +29,12 @@ namespace webapi.Controllers
         [HttpGet(Name = "GetUser")]
         public OkObjectResult Get()
         {
-            var users = _context.RegisteredUsers.ToList();
+            var users = _context.RegisteredUsers.Include(x => x.UserGames).Select(x => new GetUsersResource
+            {
+                Email = x.Email,
+                Id = x.Id,
+                UserGames = x.UserGames.Select(y => y.GameId).ToList()
+            }).ToList();
             return Ok(users);
         }
     }
